@@ -1,0 +1,19 @@
+* {
+  text-align: center;
+  background: aliceblue;
+}
+
+.margin-1rem {
+  margin: 1rem 0 0 1rem;
+}
+
+.button-style {
+  border-radius: 5px;
+  height: 2rem;
+  width: 8rem;
+  border: 2px solid #4caf50;
+}
+
+input {
+  border-radius: 5px;
+}
