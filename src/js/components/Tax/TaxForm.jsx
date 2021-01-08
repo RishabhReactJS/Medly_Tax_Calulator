@@ -87,7 +87,7 @@ class TaxForm extends Component {
       <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
         <label className="formLabel">
           Select Year for Tax calculation
-          <select className="margin-1rem" name="year">
+          <select className="margin-top-left" name="year">
             {Object.keys(taxBand).map(year => (
               <option key={year} value={year}>
                 {year}
@@ -99,7 +99,7 @@ class TaxForm extends Component {
           {' '}
           Senior Citizen
           <input
-            className="margin-1rem"
+            className="margin-top-left"
             checked={this.state.isSenior}
             type="checkbox"
             name="isSenior"
@@ -109,7 +109,7 @@ class TaxForm extends Component {
           {' '}
           Please enter Income in INR
           <input
-            className="margin-1rem"
+            className="margin-top-left"
             value={this.state.income}
             type="number"
             name="income"
@@ -118,7 +118,7 @@ class TaxForm extends Component {
         <label className="formLabel">
           Please enter Investment in INR
           <input
-            className="margin-1rem"
+            className="margin-top-left"
             value={this.state.investment}
             type="number"
             name="investment"
@@ -127,18 +127,18 @@ class TaxForm extends Component {
         <label className="formLabel">
           Total Tax in INR
           <input
-            className="margin-1rem"
+            className="margin-top-left"
             value={this.state.totalTax}
             type="number"
             name="investment"
             disabled
           />
         </label>
-        <button className="margin-1rem button-style" type="submit">
+        <button className="margin-top-left button-style" type="submit">
           Calculate
         </button>
         <button
-          className="margin-1rem button-style"
+          className="margin-top-left button-style"
           type="button"
           onClick={this.saveCalculatedTax}
         >

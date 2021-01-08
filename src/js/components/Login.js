@@ -37,30 +37,41 @@ class Login extends Component {
       .then(res => {
         localStorage.clear();
         localStorage.setItem('email', res.user.email);
-        console.log('in login res>>>', res.user.email);
       })
       .catch(err => {
-        console.log('in login catch', err);
+        alert(err);
       });
   };
   render() {
     return (
-      <div>
-        <form onChange={this.handelChenge}>
-          <label>
-            Enter Email
-            <input type="email" name="email" value={this.state.email} />
-          </label>
-          <label>
-            Enter password
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-            />
-          </label>
-          <button onClick={this.handleLogin}>Login</button>
-          <button onClick={this.handleSingup}>Singup</button>
+      <div className="login-component">
+        <form className="login-form" onChange={this.handelChenge}>
+          {/* <label className="input-container">
+            Enter Email */}
+          <input
+            placeholder="EmailID"
+            className="input-box"
+            type="email"
+            name="email"
+            value={this.state.email}
+          />
+          {/* </label> */}
+          {/* <label className="input-container">
+            Enter password */}
+          <input
+            placeholder="password"
+            className="input-box"
+            type="password"
+            name="password"
+            value={this.state.password}
+          />
+          {/* </label> */}
+          <button className="login-button" onClick={this.handleLogin}>
+            Login
+          </button>
+          <button className="login-button" onClick={this.handleSingup}>
+            Singup
+          </button>
         </form>
       </div>
     );

@@ -38,18 +38,22 @@ const Home = props => {
     });
   }, []);
   return (
-    <div>
+    <div className="home-component">
       <header>
-        <h1>Income Tax Calcuate</h1>
-        <label>
-          Email: <span>{localStorage.getItem('email')}</span>
-        </label>
-        <button onClick={handelLogout}>Logout</button>
+        <span className="home-heading">Income Tax Calcuate</span>
+        <span className="left-container">
+          <label className="margin-left">
+            Email: <span>{localStorage.getItem('email')}</span>
+          </label>
+          <button className="margin-left logout-button" onClick={handelLogout}>
+            Logout
+          </button>
+        </span>
       </header>
-      <div>
+      <section className="home-section1">
         <TaxForm customerTax={Tax} updateTax={updateTax} />
         <TaxTable customerTax={Tax} />
-      </div>
+      </section>
     </div>
   );
 };

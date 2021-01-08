@@ -1,0 +1,84 @@
+* {
+  text-align: center;
+  background: aliceblue;
+}
+
+.margin-top-left {
+  margin: 1rem 0 0 1rem;
+}
+
+.margin-left {
+  margin-left: 1rem;
+}
+
+.button-style {
+  border-radius: 5px;
+  height: 2rem;
+  width: 8rem;
+  border: 2px solid #4caf50;
+}
+
+input {
+  border-radius: 5px;
+}
+
+.login-component {
+  .login-form {
+    width: 20rem;
+    height: 12rem;
+    padding: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid blanchedalmond;
+    border-radius: 5px;
+    margin: -70px 0 0 -170px;
+    background: white;
+  }
+  .input-container {
+    display: block;
+    background: transparent;
+    text-align: start;
+  }
+
+  .input-box {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 7px;
+    margin-top: 1rem;
+    border: 1px solid blanchedalmond;
+  }
+
+  .login-button {
+    padding: 10px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    border: 1px solid blanchedalmond;
+    border-radius: 5px;
+    background: white;
+  }
+}
+
+.home-component {
+  padding: 1rem;
+
+  .home-heading {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .left-container {
+    right: 1rem;
+    position: absolute;
+  }
+  .home-section1 {
+    padding-top: 2rem;
+  }
+
+  .logout-button {
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
