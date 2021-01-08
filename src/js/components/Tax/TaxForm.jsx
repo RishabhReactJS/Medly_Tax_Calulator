@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { taxBand } from '../../utils';
 import './TaxForm.css';
 import { TaxCalculator } from './TaxCalculator';
+import fire from '../../../config/fire';
 
 class TaxForm extends Component {
   constructor(props) {
@@ -57,7 +58,28 @@ class TaxForm extends Component {
       alert('please update the income');
       return;
     }
-    this.props.updateTax(this.state);
+    const dbRef = fire.database().ref();
+    if (this.props.customerTax.some(tax => tax.year === this.state.year)) {
+      const isUpdate = confirm('Would You like to update the existing data');
+
+      if (isUpdate) {
+        const updateId = this.props.customerTax.find(
+          tax => tax.year === this.state.year
+        ).id;
+
+        dbRef
+          .child(`tax/${updateId}`)
+          .set({ ...this.state, email: localStorage.getItem('email') }, err => {
+            if (err) console.log('in err >>> ', err);
+          });
+      }
+      return;
+    }
+    dbRef
+      .child('tax')
+      .push({ ...this.state, email: localStorage.getItem('email') }, err => {
+        if (err) console.log('in err >>> ', err);
+      });
   }
 
   render() {

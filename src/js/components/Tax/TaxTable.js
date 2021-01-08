@@ -20,7 +20,7 @@ const TaxTable = ({ customerTax }) => {
       </thead>
       <tbody>
         {customerTax.map(tax => (
-          <tr key={tax.year + '_' + tax.totalTax}>
+          <tr key={tax.id}>
             <td>{tax.year}</td>
             <td>{numberFormat(tax.income, currencyDet)}</td>
             <td>{numberFormat(tax.investment, currencyDet)}</td>

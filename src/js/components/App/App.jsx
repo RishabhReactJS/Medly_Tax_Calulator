@@ -1,20 +1,32 @@
-import React, { Component, useState } from 'react';
-import TaxForm from '../Tax/TaxForm';
-import TaxTable from '../Tax/TaxTable';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
+import fire from '../../../config/fire';
+import Home from '../Home';
+import Login from '../Login';
 
 export const App = () => {
   const [Tax, setTax] = useState([]);
+  const [user, setUser] = useState(null);
 
   function updateTax(tax) {
     setTax([...Tax, tax]);
   }
 
-  return (
-    <div>
-      <h1>Income Tax Calcuate</h1>
-      <TaxForm updateTax={updateTax} />
-      <TaxTable customerTax={Tax} />
-    </div>
-  );
+  useEffect(() => {
+    console.log('in sjbdksad  >. >');
+    aurhlistner();
+  }, []);
+
+  function aurhlistner() {
+    fire.auth().onAuthStateChanged(user => {
+      console.log('in authListner>>', user);
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+  }
+
+  return <div>{user ? <Home /> : <Login />}</div>;
 };
